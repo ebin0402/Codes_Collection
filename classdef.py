@@ -94,3 +94,32 @@ class Companies():
 import datetime as dt
 check_date = dt.date(2020,6,6)
 print(Companies.isworkday(check_date))
+
+
+############ Class Inheritance #############
+
+#Creating a class to manage the employees for different companies
+
+class Folks():
+    hike=1.0890
+    def __init__(self,first,last,desig,sal):
+        self.first=first
+        self.last=last
+        self.email=first+'.'+last+'@company.com'
+        self.desig=desig
+        self.sal=sal
+    def salhike(self):
+        self.sal=self.sal+(self.sal*self.hike)
+
+class LTI(Folks):
+    pass
+class Synup():
+    pass
+class Pwc():
+    pass
+
+
+print(help(Pwc))
+
+    
+
