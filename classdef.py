@@ -172,18 +172,28 @@ __repr__ --> an unambiguous representation of the oblect and is used for debuggi
 __str__ --> readable representation of an object. used as a display
 '''
 class College():
-    def __init__(self,dept,name,usn):
+    def __init__(self,dept,name,usn,fees):
         self.dept=dept
         self.name=name
         self.usn=usn
+        self.fees=fees
     def fullname(self):
         return self.name+self.dept
 
     def __repr__(self):
         return "College('{}','{}','{}')".format(self.dept,self.name,self.usn)
-    # def __str__(self):
-    #     return '{}'.format(self.fullname())
+    def __str__(self):
+        return '{}'.format(self.fullname())
+    def __add__(self,other):
+        return self.fees + other.fees
+    def __len__(self):
+        return len(self.name)
 
-s1=College('Aero','Ebin','1NT11AE010')
-print(s1)
+
+s1=College('Aero','Ebin','1NT11AE010',200000)
+s2=College('Aero','Midhun','1NT11AE022',150000)
+print(s1+s2)
+print(len(s2))
+print(len(s1))
+
 
